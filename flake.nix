@@ -8,7 +8,10 @@
     };
 
     nix-software-center.url = "github:vlinkz/nix-software-center";
-    nixos-artwork = { url = "github:NixOS/nixos-artwork"; flake = false; };
+    nixos-artwork = {
+      url = "github:NixOS/nixos-artwork";
+      flake = false;
+    };
     nix-std.url = "github:chessai/nix-std";
     nix-index-database = {
       url = "github:Mic92/nix-index-database";
@@ -24,11 +27,12 @@
 
     firefox = {
       url = "github:nix-community/flake-firefox-nightly";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
+      inputs = { nixpkgs.follows = "nixpkgs"; };
     };
-    firefox-gnome-theme = { url = "github:rafaelmardojai/firefox-gnome-theme/nightly"; flake = false; };
+    firefox-gnome-theme = {
+      url = "github:rafaelmardojai/firefox-gnome-theme/nightly";
+      flake = false;
+    };
 
     charliepkgs = {
       url = "github:caffeinatedcharlie/charliepkgs";

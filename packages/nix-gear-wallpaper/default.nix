@@ -20,8 +20,10 @@ pkgs.writeTextFile {
   meta = {
     description = "NixOS Gear wallpaper";
     homepage = "https://github.com/NixOS/nixos-artwork/pull/82";
-    downloadPage = "https://github.com/NixOS/nixos-artwork/blob/master/wallpapers/nix-wallpaper-gear.png";
-    license = lib.licenses.cc-by-sa-40; # https://github.com/NixOS/nixos-artwork/blob/master/CONTRIBUTORS.md#multisamplednight
+    downloadPage =
+      "https://github.com/NixOS/nixos-artwork/blob/master/wallpapers/nix-wallpaper-gear.png";
+    license =
+      lib.licenses.cc-by-sa-40; # https://github.com/NixOS/nixos-artwork/blob/master/CONTRIBUTORS.md#multisamplednight
     platforms = lib.platforms.all;
   };
 }
