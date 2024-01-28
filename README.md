@@ -11,4 +11,4 @@
 
 My NixOS dotfiles!
 
-Co-authored by [caffeinatedcharlie](https://github.com/caffeinatedcharlie/)
+Initial starting point by [caffeinatedcharlie](https://github.com/caffeinatedcharlie/) because [Yusof](https://github.com/yoloyusof) could not be bothered to use [Snowfall](https://snowfall.org/)
