@@ -38,15 +38,13 @@
           "paperwm@paperwm.github.com"
         ];
         favorite-apps = [
-          "google-chrome.desktop"
+          "firefox-nightly.desktop"
           "code.desktop"
           "org.gnome.Console.desktop"
           "obsidian.desktop"
           "org.prismlauncher.PrismLauncher.desktop"
           "org.gnome.Nautilus.desktop"
-          "discord.desktop"
           "org.inkscape.Inkscape.desktop"
-          "org.kde.kdenlive.desktop"
           "com.obsproject.Studio.desktop"
           "steam.desktop"
         ];
