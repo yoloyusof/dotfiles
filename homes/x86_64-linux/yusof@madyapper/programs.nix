@@ -12,7 +12,7 @@ in
     bun =
       {
         enable = true;
-        package = pkgs.me.bun-mainline;
+        package = pkgs.me.bun-baseline;
       };
     vesktop = {
       enable = true;
