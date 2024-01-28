@@ -5,7 +5,7 @@
     # My user account
     isNormalUser = true;
     extraGroups = [ "wheel" "networkmanager" "libvirtd" "video" "audio" ];
-    initialHashedPassword = "$y$j9T$It5oQO/Z2zis15EnpJinD.$.AujWRPz4EYUfuRMOTmByKCw051rRLbh8OAiqv2KVS/";
+    initialHashedPassword = "$y$j9T$Ti3J9SPuMWUbrUEjTYgbf0$wNuh5CG1AfASfkaBoxpr1GsgPU9DRjk50wH9aUilDD7";
     shell = pkgs.nushell;
   };
 }
