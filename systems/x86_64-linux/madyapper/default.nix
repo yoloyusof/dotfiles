@@ -5,6 +5,23 @@
 { config, pkgs, inputs, ... }:
 
 {
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware.nix
+    # Configure the Nix package manager
+    ./nix.nix
+    # User Interface configuration
+    ./desktop
+    # Enable sound
+    ./sound.nix
+    # Import users
+    ./users
+    # Import services and other global program configurations
+    ./services
+    # Import session variables
+    ./variables.nix
+  ];
+
   security.hardened = true; # Enable NixOS hardening
 
   # Use the systemd-boot EFI boot loader.
