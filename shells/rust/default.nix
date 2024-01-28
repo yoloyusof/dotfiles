@@ -2,6 +2,7 @@
 pkgs.mkShell {
   packages = [
     pkgs.rustc
+    pkgs.rustup
     pkgs.cargo
     pkgs.rust-analyzer
     pkgs.rustfmt
