@@ -11,4 +11,4 @@
 
 My NixOS dotfiles!
 
-Initial starting point by [caffeinatedcharlie](https://github.com/caffeinatedcharlie/) because [Yusof](https://github.com/yoloyusof) could not be bothered to use [Snowfall](https://snowfall.org/)
+[caffeinatedcharlie](https://github.com/caffeinatedcharlie) was only here so I could get him to finally use Snowfall I no longer talk nor actively communicate to this person due to recent events. Thanks!
