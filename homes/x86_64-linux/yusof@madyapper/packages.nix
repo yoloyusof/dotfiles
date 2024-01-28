@@ -9,7 +9,6 @@ let
 in
 {
   home.packages = with unstable; [
-    vinegar
     obsidian
     inkscape
     gimp
