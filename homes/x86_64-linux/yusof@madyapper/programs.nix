@@ -9,7 +9,11 @@ in
     firefox.enable = true;
     vscode.enable = true;
     obs-studio.enable = true;
-    bun.enable = true;
+    bun =
+      {
+        enable = true;
+        package = unstable.bun;
+      };
     vesktop = {
       enable = true;
       package = charliepkgs.lib.patchOutput unstable.vesktop ''
