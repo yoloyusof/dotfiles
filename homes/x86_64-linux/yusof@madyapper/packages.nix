@@ -22,8 +22,9 @@ in
     tor-browser
     newsflash
     whois
+    ngrok
+    nixfmt
   ] ++ [
-    pkgs.nixfmt
     inputs.nix-software-center.packages.${pkgs.system}.nix-software-center
   ];
 }
