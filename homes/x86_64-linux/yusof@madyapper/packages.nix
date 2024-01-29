@@ -23,6 +23,7 @@ in
     newsflash
     whois
   ] ++ [
+    pkgs.nixfmt
     inputs.nix-software-center.packages.${pkgs.system}.nix-software-center
   ];
 }
