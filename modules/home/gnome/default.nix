@@ -11,7 +11,7 @@
         blur-my-shell
         wayland-or-x11
         paperwm
-      ] ++ [ pkgs.adw-gtk3 pkgs.gnome.gnome-tweaks pkgs.me.nix-gear-wallpaper ];
+      ] ++ [ pkgs.adw-gtk3 pkgs.gnome.gnome-tweaks pkgs.me.nix-gear-wallpaper pkgs.me.car-wallpaper ];
 
     dconf.settings = {
 
