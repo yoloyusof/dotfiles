@@ -63,6 +63,6 @@ builtins.concatLists (builtins.attrValues {
     visualstudioexptteam.vscodeintellicode
     vivaxy.vscode-conventional-commits
     ziglang.vscode-zig
-
+    formulahendry.auto-rename-tag
   ];
 })

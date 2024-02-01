@@ -2,7 +2,7 @@
 
 {
   config = lib.mkIf osConfig.services.xserver.desktopManager.gnome.enable {
-    # GSConnect was installed in systems/x84_64-linux/mollerbot/phone.nix when I set programs.kdeconnect.package
+
     home.packages = with pkgs.gnomeExtensions;
       [
         appindicator
@@ -11,6 +11,7 @@
         blur-my-shell
         wayland-or-x11
         paperwm
+        smile-complementary-extension
       ] ++ [ pkgs.adw-gtk3 pkgs.gnome.gnome-tweaks pkgs.me.nix-gear-wallpaper pkgs.me.car-wallpaper ];
 
     dconf.settings = {
@@ -36,6 +37,7 @@
           "hotedge@jonathan.jdoda.ca"
           "waylandorx11@injcristianrojas.github.com"
           "paperwm@paperwm.github.com"
+          "smile-extension@mijorus.it"
         ];
         favorite-apps = [
           "firefox-nightly.desktop"
