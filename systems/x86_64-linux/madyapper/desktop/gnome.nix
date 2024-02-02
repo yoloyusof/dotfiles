@@ -2,9 +2,7 @@
 
 {
   services.xserver.desktopManager.gnome.enable = true;
-  environment.systemPackages = [
-    pkgs.adwaita-qt
-  ];
+  environment.systemPackages = [ pkgs.adwaita-qt ];
   qt.style = "adwaita-dark";
   environment.gnome.excludePackages = with pkgs; [
     gnome-tour

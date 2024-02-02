@@ -10,16 +10,12 @@
     settings = {
       # How to update this array later: Go to https://nixos.org/manual/nix/stable/contributing/experimental-features#currently-available-experimental-features
       # and run `copy(JSON.stringify($$("#currently-available-experimental-features ~ h2").map(h2 => h2.textContent), null, 2).replaceAll(",", ""))`
-      experimental-features = [
-        "flakes"
-        "nix-command"
-      ];
-      use-xdg-base-directories = false; # Some bug makes $PATH not update to the new directories so for now I'm disabling this
+      experimental-features = [ "flakes" "nix-command" ];
+      use-xdg-base-directories =
+        false; # Some bug makes $PATH not update to the new directories so for now I'm disabling this
       auto-optimise-store = true;
       log-lines = 10000000;
-      substituters = [
-        "https://nix-community.cachix.org"
-      ];
+      substituters = [ "https://nix-community.cachix.org" ];
       trusted-public-keys = [
         "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
       ];
@@ -33,7 +29,8 @@
     registry.nixpkgs.flake = inputs.nixpkgs;
     nixPath = [ "nixpkgs=flake:nixpkgs" ];
   };
-  home-manager.useUserPackages = true; # "This is necessary if, for example, you wish to use `nixos-rebuild build-vm`" ―https://nix-community.github.io/home-manager/#:~:text=use%20nixos-rebuild-,build-vm,-.%20This%20option%20may
+  home-manager.useUserPackages =
+    true; # "This is necessary if, for example, you wish to use `nixos-rebuild build-vm`" ―https://nix-community.github.io/home-manager/#:~:text=use%20nixos-rebuild-,build-vm,-.%20This%20option%20may
   home-manager.useGlobalPkgs = true;
 }
 

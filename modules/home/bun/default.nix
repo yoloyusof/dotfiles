@@ -3,8 +3,7 @@
 let
   cfg = config.programs.bun;
   tomlFormat = pkgs.formats.toml { };
-in
-{
+in {
   options.programs.bun = {
     enable = lib.mkEnableOption "Bun JavaScript runtime";
     package = lib.mkPackageOption pkgs "bun" { };

@@ -1,25 +1,28 @@
 { inputs, pkgs, system, lib, ... }:
 
 let
-  unstable = import inputs.nixpkgs-unstable { system = system; config.allowUnfree = true; };
+  unstable = import inputs.nixpkgs-unstable {
+    system = system;
+    config.allowUnfree = true;
+  };
   charliepkgs = inputs.charliepkgs;
-in
-{
+in {
   programs = {
     firefox.enable = true;
     vscode.enable = true;
     obs-studio.enable = true;
-    bun =
-      {
-        enable = true;
-        package = pkgs.me.bun-baseline;
-      };
+    bun = {
+      enable = true;
+      package = pkgs.me.bun-baseline;
+    };
     vesktop = {
       enable = true;
       package = charliepkgs.lib.patchOutput unstable.vesktop ''
         rm -r $out/share/icons
         mkdir -p $out/share/icons/hicolor/scalable/apps/
-        cp ${./icons/vesktop.svg} $out/share/icons/hicolor/scalable/apps/vesktop.svg
+        cp ${
+          ./icons/vesktop.svg
+        } $out/share/icons/hicolor/scalable/apps/vesktop.svg
       '';
     };
     nix-index-database.comma.enable = true;

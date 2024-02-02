@@ -1,24 +1,16 @@
-{ lib
-, stdenvNoCC
-, fetchurl
-, autoPatchelfHook
-, unzip
-, installShellFiles
-, openssl
-, writeShellScript
-, curl
-, jq
-, common-updater-scripts
-}:
+{ lib, stdenvNoCC, fetchurl, autoPatchelfHook, unzip, installShellFiles, openssl
+, writeShellScript, curl, jq, common-updater-scripts }:
 
 stdenvNoCC.mkDerivation rec {
   version = "1.0.25";
   pname = "bun";
 
-  src = passthru.sources.${stdenvNoCC.hostPlatform.system} or (throw "Unsupported system: ${stdenvNoCC.hostPlatform.system}");
+  src = passthru.sources.${stdenvNoCC.hostPlatform.system} or (throw
+    "Unsupported system: ${stdenvNoCC.hostPlatform.system}");
 
   strictDeps = true;
-  nativeBuildInputs = [ unzip installShellFiles ] ++ lib.optionals stdenvNoCC.isLinux [ autoPatchelfHook ];
+  nativeBuildInputs = [ unzip installShellFiles ]
+    ++ lib.optionals stdenvNoCC.isLinux [ autoPatchelfHook ];
   buildInputs = [ openssl ];
 
   dontConfigure = true;
@@ -34,35 +26,40 @@ stdenvNoCC.mkDerivation rec {
   '';
 
   postPhases = [ "postPatchelf" ];
-  postPatchelf = lib.optionalString (stdenvNoCC.buildPlatform.canExecute stdenvNoCC.hostPlatform) ''
-    completions_dir=$(mktemp -d)
+  postPatchelf = lib.optionalString
+    (stdenvNoCC.buildPlatform.canExecute stdenvNoCC.hostPlatform) ''
+      completions_dir=$(mktemp -d)
 
-    SHELL="bash" $out/bin/bun completions $completions_dir
-    SHELL="zsh" $out/bin/bun completions $completions_dir
-    SHELL="fish" $out/bin/bun completions $completions_dir
+      SHELL="bash" $out/bin/bun completions $completions_dir
+      SHELL="zsh" $out/bin/bun completions $completions_dir
+      SHELL="fish" $out/bin/bun completions $completions_dir
 
-    installShellCompletion --name bun \
-      --bash $completions_dir/bun.completion.bash \
-      --zsh $completions_dir/_bun \
-      --fish $completions_dir/bun.fish
-  '';
+      installShellCompletion --name bun \
+        --bash $completions_dir/bun.completion.bash \
+        --zsh $completions_dir/_bun \
+        --fish $completions_dir/bun.fish
+    '';
 
   passthru = {
     sources = {
       "aarch64-darwin" = fetchurl {
-        url = "https://github.com/oven-sh/bun/releases/download/bun-v${version}/bun-darwin-aarch64.zip";
+        url =
+          "https://github.com/oven-sh/bun/releases/download/bun-v${version}/bun-darwin-aarch64.zip";
         hash = "sha256-Upgh45aYCNmW1we/+2VsNbJl718HKQNFoAg0zDmHSwA=";
       };
       "aarch64-linux" = fetchurl {
-        url = "https://github.com/oven-sh/bun/releases/download/bun-v${version}/bun-linux-aarch64.zip";
+        url =
+          "https://github.com/oven-sh/bun/releases/download/bun-v${version}/bun-linux-aarch64.zip";
         hash = "sha256-RhHJ3H6tA8te1sk0eMEb5jBHFoAvfBTUWQo6O3ycMCs=";
       };
       "x86_64-darwin" = fetchurl {
-        url = "https://github.com/oven-sh/bun/releases/download/bun-v${version}/bun-darwin-x64.zip";
+        url =
+          "https://github.com/oven-sh/bun/releases/download/bun-v${version}/bun-darwin-x64.zip";
         hash = "sha256-TSnZ727ERoglVxJQ/Ve+YkZNezYD1YxwJRw2sC1F0ro=";
       };
       "x86_64-linux" = fetchurl {
-        url = "https://github.com/oven-sh/bun/releases/download/bun-v${version}/bun-linux-x64-baseline.zip";
+        url =
+          "https://github.com/oven-sh/bun/releases/download/bun-v${version}/bun-linux-x64-baseline.zip";
         hash = "sha256-LhLfXosN5rs6RBoTbrzP+x4B3IT2etp1DbQCmsqZ3Mk=";
       };
     };
@@ -83,7 +80,8 @@ stdenvNoCC.mkDerivation rec {
   meta = with lib; {
     homepage = "https://bun.sh";
     changelog = "https://bun.sh/blog/bun-v${version}";
-    description = "Incredibly fast JavaScript runtime, bundler, transpiler and package manager – all in one";
+    description =
+      "Incredibly fast JavaScript runtime, bundler, transpiler and package manager – all in one";
     sourceProvenance = with sourceTypes; [ binaryNativeCode ];
     longDescription = ''
       All in one fast & easy-to-use tool. Instead of 1,000 node_modules for development, you only need bun.

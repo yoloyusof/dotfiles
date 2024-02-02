@@ -1,6 +1,1 @@
-{ pkgs, ... }:
-pkgs.mkShell {
-  packages = [
-    pkgs.zulu17
-  ];
-}
+{ pkgs, ... }: pkgs.mkShell { packages = [ pkgs.zulu17 ]; }

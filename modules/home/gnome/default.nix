@@ -12,7 +12,12 @@
         wayland-or-x11
         paperwm
         smile-complementary-extension
-      ] ++ [ pkgs.adw-gtk3 pkgs.gnome.gnome-tweaks pkgs.me.nix-gear-wallpaper pkgs.me.car-wallpaper ];
+      ] ++ [
+        pkgs.adw-gtk3
+        pkgs.gnome.gnome-tweaks
+        pkgs.me.nix-gear-wallpaper
+        pkgs.me.car-wallpaper
+      ];
 
     dconf.settings = {
 
