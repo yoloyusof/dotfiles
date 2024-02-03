@@ -24,6 +24,7 @@ in {
       whois
       ngrok
       nixfmt
+      libsForQt5.kdenlive
     ] ++ [
       inputs.nix-software-center.packages.${pkgs.system}.nix-software-center
     ];
