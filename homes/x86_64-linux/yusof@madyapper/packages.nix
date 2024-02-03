@@ -25,6 +25,7 @@ in {
       ngrok
       nixfmt
       libsForQt5.kdenlive
+      yt-dlp
     ] ++ [
       inputs.nix-software-center.packages.${pkgs.system}.nix-software-center
     ];
