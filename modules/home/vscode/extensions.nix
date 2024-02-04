@@ -20,6 +20,7 @@ builtins.concatLists (builtins.attrValues {
     oven.bun-vscode
     svelte.svelte-vscode
     antfu.unocss
+    bradlc.vscode-tailwindcss
   ];
   gnome = with extensions; [
     bodil.blueprint-gtk
