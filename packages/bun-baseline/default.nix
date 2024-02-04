@@ -2,7 +2,7 @@
 , writeShellScript, curl, jq, common-updater-scripts }:
 
 stdenvNoCC.mkDerivation rec {
-  version = "1.0.25";
+  version = "1.0.26";
   pname = "bun";
 
   src = passthru.sources.${stdenvNoCC.hostPlatform.system} or (throw
@@ -60,7 +60,7 @@ stdenvNoCC.mkDerivation rec {
       "x86_64-linux" = fetchurl {
         url =
           "https://github.com/oven-sh/bun/releases/download/bun-v${version}/bun-linux-x64-baseline.zip";
-        hash = "sha256-LhLfXosN5rs6RBoTbrzP+x4B3IT2etp1DbQCmsqZ3Mk=";
+        hash = "sha256-/VP0mAG2rgk3dXgBTK15OA6lOnPtRgzXQbfg3QPbrJs=";
       };
     };
     updateScript = writeShellScript "update-bun" ''
