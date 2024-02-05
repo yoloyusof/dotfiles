@@ -27,6 +27,7 @@ in {
       libsForQt5.kdenlive
       yt-dlp
       lunar-client
+      google-chrome
     ] ++ [
       inputs.nix-software-center.packages.${pkgs.system}.nix-software-center
     ];
