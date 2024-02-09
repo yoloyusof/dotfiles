@@ -12,15 +12,28 @@
         wayland-or-x11
         paperwm
         smile-complementary-extension
+        user-themes
       ] ++ [
         pkgs.adw-gtk3
         pkgs.gnome.gnome-tweaks
         pkgs.me.nix-gear-wallpaper
         pkgs.me.car-wallpaper
+        pkgs.me.catppuccin-mocha-wallpaper
       ];
 
-    dconf.settings = {
+    gtk = {
+      enable = true;
+      theme = {
+        name = "Catppuccin Mocha";
+        package = pkgs.catppuccin-gtk.override {
+          accents = [ "rosewater" ];
+          size = "standard";
+          variant = "mocha";
+        };
+      };
+    };
 
+    dconf.settings = {
       "org/gnome/mutter" = {
         attach-modal-dialogs = true;
         dynamic-workspaces = true;
@@ -43,6 +56,7 @@
           "waylandorx11@injcristianrojas.github.com"
           "paperwm@paperwm.github.com"
           "smile-extension@mijorus.it"
+          "user-theme@gnome-shell-extensions.gcampax.github.com"
         ];
         favorite-apps = [
           "firefox-nightly.desktop"
