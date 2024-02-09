@@ -1,7 +1,7 @@
 { inputs, pkgs, lib, ... }:
 pkgs.writeTextFile {
   name = "catppuccin-mocha-wallpaper";
-  destination = "/share/gnome-background-properties/car.xml";
+  destination = "/share/gnome-background-properties/catppuccin-mocha-wallpaper.xml";
   text = ''
     <?xml version="1.0"?>
     <!DOCTYPE wallpapers SYSTEM "gnome-wp-list.dtd">
