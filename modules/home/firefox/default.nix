@@ -12,21 +12,21 @@
               osConfig.services.xserver.desktopManager.plasma5.enable;
           };
         };
-      profiles.default = {
-        isDefault = true;
-        name = "default";
-        id = 0;
-        settings = {
-          # For Firefox GNOME theme:
-          "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
-          "svg.context-properties.content.enabled" = true;
-          "browser.theme.dark-private-windows" = false;
-          "gnomeTheme.hideSingleTab" = true;
-          "gnomeTheme.hideWebrtcIndicator" = true;
-        };
-        userChrome = ''@import "firefox-gnome-theme/userChrome.css";'';
-        userContent = ''@import "firefox-gnome-theme/userContent.css";'';
-      };
+      # profiles.default = {
+      #   isDefault = true;
+      #   name = "default";
+      #   id = 0;
+      #   settings = {
+      #     # For Firefox GNOME theme:
+      #     "toolkit.legacyUserProfileCustomizations.stylesheets" = true;
+      #     "svg.context-properties.content.enabled" = true;
+      #     "browser.theme.dark-private-windows" = false;
+      #     "gnomeTheme.hideSingleTab" = true;
+      #     "gnomeTheme.hideWebrtcIndicator" = true;
+      #   };
+      #   userChrome = ''@import "firefox-gnome-theme/userChrome.css";'';
+      #   userContent = ''@import "firefox-gnome-theme/userContent.css";'';
+      # };
     };
   };
 }
