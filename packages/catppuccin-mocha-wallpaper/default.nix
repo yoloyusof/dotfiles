@@ -8,7 +8,7 @@ pkgs.writeTextFile {
     <wallpapers>
       <wallpaper deleted="false">
         <name>Catppuccin Mocha Wallpaper</name>
-        <filename>${./wallpaper.jpg}</filename>
+        <filename>${./wallpaper.png}</filename>
         <options>zoom</options>
         <shade_type>solid</shade_type>
         <pcolor>#ffffff</pcolor>
