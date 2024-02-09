@@ -6,8 +6,37 @@ let
     config.allowUnfree = true;
   };
   charliepkgs = inputs.charliepkgs;
-in {
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
+in
+{
+  imports = [ inputs.spicetify-nix.homeManagerModules.default ];
+
   programs = {
+    spicetify =
+      let
+        SpotifyNoPremium = pkgs.fetchgit {
+          url = "https://github.com/Daksh777/SpotifyNoPremium";
+          rev = "b67e393a3eacab964ed388d10802944fc1935148";
+          sha256 = "HvJa7F92DwzP1q8qxjxgKVUUCS8SFlsk5jUEgj2VQSg=";
+        };
+      in
+      {
+        enable = true;
+        theme = spicePkgs.themes.catppuccin;
+        colorScheme = "mocha";
+
+        enabledExtensions = with spicePkgs.extensions; [
+          fullAppDisplay
+          shuffle # shuffle+ (special characters are sanitized out of ext names)
+          hidePodcasts
+          adblock
+        ];
+
+        enabledCustomApps = with spicePkgs.apps; [
+          new-releases
+          lyrics-plus
+        ];
+      };
     firefox.enable = true;
     vscode.enable = true;
     obs-studio.enable = true;
