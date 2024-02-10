@@ -1,7 +1,7 @@
 { inputs, config, osConfig, lib, pkgs, ... }: {
   config = lib.mkIf config.programs.firefox.enable {
-    home.file.".mozilla/firefox/default/chrome/firefox-gnome-theme".source =
-      inputs.firefox-gnome-theme;
+    # home.file.".mozilla/firefox/default/chrome/firefox-gnome-theme".source =
+    #   inputs.firefox-gnome-theme;
     programs.firefox = {
       package =
         inputs.firefox.packages.${pkgs.system}.firefox-nightly-bin.override {
