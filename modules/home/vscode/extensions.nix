@@ -65,5 +65,7 @@ builtins.concatLists (builtins.attrValues {
     vivaxy.vscode-conventional-commits
     ziglang.vscode-zig
     formulahendry.auto-rename-tag
+    Catppuccin.catppuccin-vsc
+    Catppuccin.catppuccin-vsc-icons
   ];
 })
