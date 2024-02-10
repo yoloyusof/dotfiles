@@ -38,6 +38,8 @@ builtins.concatLists (builtins.attrValues {
     piousdeer.adwaita-theme
     pkief.material-icon-theme
     vscode-icons-team.vscode-icons
+    catppuccin.catppuccin-vsc
+    catppuccin.catppuccin-vsc-icons
   ];
   rust = with extensions; [
     relm4.relm4-snippets
@@ -65,7 +67,5 @@ builtins.concatLists (builtins.attrValues {
     vivaxy.vscode-conventional-commits
     ziglang.vscode-zig
     formulahendry.auto-rename-tag
-    catppuccin.catppuccin-vsc
-    catppuccin.catppuccin-vsc-icons
   ];
 })
