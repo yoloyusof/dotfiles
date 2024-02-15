@@ -28,6 +28,7 @@ in {
       yt-dlp
       lunar-client
       google-chrome
+      blender
     ] ++ [
       inputs.nix-software-center.packages.${pkgs.system}.nix-software-center
     ];
