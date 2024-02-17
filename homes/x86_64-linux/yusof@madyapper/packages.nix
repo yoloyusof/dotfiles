@@ -29,6 +29,7 @@ in {
       lunar-client
       google-chrome
       blender
+      fastfetch
     ] ++ [
       inputs.nix-software-center.packages.${pkgs.system}.nix-software-center
     ];
