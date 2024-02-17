@@ -12,5 +12,6 @@ in {
         ovmf.packages = [ pkgs.OVMFFull.fd ];
       };
     };
+    virtualisation.waydroid.enable = true;
   };
 }
