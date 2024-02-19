@@ -9,9 +9,8 @@
   boot.initrd.availableKernelModules =
     [ "ehci_pci" "ahci" "usb_storage" "usbhid" "sd_mod" ];
   boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-intel" ];
-  boot.extraModulePackages = [ ];
-
+  boot.kernelModules = [ "kvm-intel" "v4l2loopback" ];
+  boot.extraModulePackages = with config.boot.kernelPackages; [ v4l2loopback ];
   fileSystems."/" = {
     device = "/dev/disk/by-uuid/aadeb2ad-be5f-4b6b-877a-39c5a5b330d8";
     fsType = "ext4";
@@ -36,6 +35,8 @@
   services.xserver.videoDrivers = [ "nvidia" ];
   hardware.nvidia.modesetting.enable = true;
   hardware.nvidia.package = config.boot.kernelPackages.nvidiaPackages.stable;
+
+
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.opengl = {
     enable = true;
@@ -45,6 +46,12 @@
   services.ratbagd.enable = true;
   services.flatpak.enable = true;
   services.printing.enable = true;
+  services.usbmuxd.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    libimobiledevice
+    ifuse # optional, to mount using 'ifuse'
+  ]; # im trying to jailbreak an ios device.
 
   hardware.cpu.intel.updateMicrocode =
     lib.mkDefault config.hardware.enableRedistributableFirmware;
