@@ -30,6 +30,7 @@ in {
       google-chrome
       blender
       fastfetch
+      usbmuxd
     ] ++ [
       inputs.nix-software-center.packages.${pkgs.system}.nix-software-center
     ];
